@@ -34,7 +34,9 @@ add_executable(${PROJECT_NAME} src/main.cpp
         src/colors.h
         src/colors.cpp
         src/block.cpp
-        src/blocks.cpp)
+        src/blocks.cpp
+        src/game.h
+        src/game.cpp)
 #set(raylib_VERBOSE 1)
 target_link_libraries(${PROJECT_NAME} raylib)
 

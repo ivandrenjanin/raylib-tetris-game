@@ -1,5 +1,4 @@
-#include "blocks.cpp"
-#include "grid.h"
+#include "game.h"
 #include "raylib.h"
 
 int main() {
@@ -7,16 +6,11 @@ int main() {
     SetTargetFPS(60);
     Color darkBlue = {44, 44, 127, 255};
 
-    Grid grid = Grid();
-    grid.Print();
-
-    IBlock block = IBlock();
-
+    Game game = Game();
     while (!WindowShouldClose()) {
         BeginDrawing();
         ClearBackground(darkBlue);
-        grid.Draw();
-        block.Draw();
+        game.Draw();
         EndDrawing();
     }
 
