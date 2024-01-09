@@ -1,6 +1,6 @@
 #include "grid.h"
-#include <iostream>
 #include "colors.h"
+#include <iostream>
 
 Grid::Grid() {
     numRows = 20;
@@ -44,4 +44,12 @@ void Grid::Draw() {
             DrawRectangle(column * cellSize + 1, row * cellSize + 1, cellSize - 1, cellSize - 1, colors[cellValue]);
         }
     }
+}
+
+bool Grid::isCellOutside(int row, int column) {
+    if (row >= 0 && row < numRows && column >= 0 && column < numCols) {
+        return false;
+    }
+
+    return true;
 }
