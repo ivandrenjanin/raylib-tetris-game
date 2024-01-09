@@ -17,11 +17,13 @@ bool EventTriggered(double interval) {
 int main() {
     InitWindow(500, 620, "raylib Tetris");
     SetTargetFPS(60);
-
-    Font font = LoadFontEx("assets/fonts/monogram.ttf", 64, 0, 0);
+    const char *dir = GetWorkingDirectory();
+    std::cout << dir << std::endl;
+    Font font = LoadFontEx("../assets/fonts/monogram.ttf", 64, 0, 0);
 
     Game game = Game();
     while (!WindowShouldClose()) {
+        UpdateMusicStream(game.music);
         game.HandleInput();
 
         if (EventTriggered(0.2)) {
